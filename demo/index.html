@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        
+        <title>jquery-image-viewer demo</title>
+        
+        <style type="text/css" media="screen">
+            
+            /* Demo styles */
+            body {
+                color: #666;
+                font: 14px 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Helvetica,Arial,sans-serif;
+                margin: 0;
+                text-align: center;
+            }
+            h1 {
+                color: #000;
+                font-size: 30px;
+            }
+            h2 {
+                color: #333;
+                font-size: 20px;
+            }
+            hr {
+                border: 0 none;
+                border-top: 1px solid #ccc;
+                clear: both;
+                height: 1px;
+                margin: 50px 0;
+            }
+            a img {
+                border: 0 none;
+            }
+            #container {
+                margin: 0 auto;
+                text-align: left;
+                width: 400px;
+            }
+            
+            /* Example 4 */
+            #example-4 {}
+            #example-4 .links {
+                margin: 15px 0;
+                text-align: center;
+            }
+            #example-4 .links a {
+                background: #ccc;
+                color: #666;
+                padding: 3px 8px;
+                text-decoration: none;
+            }
+            #example-4 .links a:hover {
+                background: #333;
+                color: #fff;
+            }
+            #example-4 .prev {}
+            #example-4 .next {}
+            #example-4 .slides {
+                margin: 15px 0;
+                text-align: center;
+            }
+            #example-4 .slides img {
+                background: #ccc;
+                padding: 10px;
+            }
+            #example-4 .thumbnails {
+                margin: 15px 0;
+                text-align: center;
+            }
+            #example-4 .thumbnails a {
+                margin: 0;
+                padding: 0;
+            }
+            #example-4 .thumbnails img {
+                background: #ccc;
+                margin: 0;
+                padding: 5px;
+            }
+            #example-4 .active-thumbnail img {
+                background: #C76416;
+            }
+            
+        
+        </style>
+
+        <!-- Javascript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../jquery-image-viewer/jquery.image_viewer.js"></script>
+        <script type="text/javascript">
+        
+            $(function() {
+                
+                // A simple example.
+                $('#example-1').image_viewer({
+                    slideshow_images_selector: '#example-1 .slides',
+                    previous_selector: '#example-1 .prev',
+                    next_selector: '#example-1 .next'
+                });
+                
+                // An example with custom content, including heading, text and image.
+                $('#example-2').image_viewer({
+                    delay: 3000,
+                    slideshow_images_selector: '#example-2 .slides',
+                    thumbnails_selector: '#example-2 .thumbnails',
+                    previous_selector: '#example-2 .prev',
+                    next_selector: '#example-2 .next'
+                });
+
+                // A more complex example that changes the first slide.
+                $('#example-3').image_viewer({
+                    start: 2,
+                    delay: 0,
+                    slideshow_images_selector: '#example-3 .slides',
+                    thumbnails_selector: '#example-3 .thumbnails',
+                    previous_selector: '#example-3 .prev',
+                    next_selector: '#example-3 .next'
+                });
+                
+                // A complete example with some styling.
+                $('#example-4').image_viewer({
+                    delay: 2000,
+                    slideshow_images_selector: '#example-4 .slides',
+                    thumbnails_selector: '#example-4 .thumbnails',
+                    previous_selector: '#example-4 .prev',
+                    next_selector: '#example-4 .next'
+                });
+
+            }); 
+        
+        </script>
+    
+    </head>
+    <body>
+        <div id="container">
+            
+            <h1>jquery-image-viewer demo</h1>
+            
+            <ul>
+                <li><a href="#e-1" title="View example 1">Example 1</a> - A basic example.</li>
+                <li><a href="#e-2" title="View example 2">Example 2</a> - An example that uses a div with a heading, image (with a link) and some text.</li>
+                <li><a href="#e-3" title="View example 3">Example 3</a> - An example showing how to set the first slide.</li>
+                <li><a href="#e-4" title="View example 4">Example 4</a> - A complete example with styling.</li>
+            </ul>
+            
+            <h2 id="e-1">Example 1</h2>
+            <p>This is a basic example of the slideshow with just a previous/next link and images. Auto-play is enabled.</p>
+            
+            <div id="example-1">
+                <a href="#" title="View the previous image" class="prev">Prev</a>
+                <a href="#" title="View the next image" class="next">Next</a>
+                <div class="slides">
+                    <img src="img/demo-images/pancakes-300x300.jpg" alt="" />
+                    <img src="img/demo-images/lunch-300x300.jpg" alt="" />
+                    <img src="img/demo-images/dinner-300x300.jpg" alt="" />
+                    <img src="img/demo-images/island-300x300.jpg" alt="" />
+                    <img src="img/demo-images/wave-300x300.jpg" alt="" />
+                    <img src="img/demo-images/stream-300x300.jpg" alt="" />
+                    <img src="img/demo-images/mountain-300x300.jpg" alt="" />
+                </div>
+            </div>
+            
+            <hr />
+            
+            <h2 id="e-2">Example 2</h2>
+            <p>This examples shows the use of thumbnails in combination with a div containing a heading, an image (with a link) and some text.</p>
+            
+            <div id="example-2">
+                <div class="slides">
+                    <div>
+                        <h4>Pancakes</h4>
+                        <p><a href="http://www.google.com/" title="View this image"><img src="img/demo-images/pancakes-300x300.jpg" alt="Pancakes" /></a></p>
+                        <p>A yummy syrupy stack!</p>
+                    </div>
+                    <div>
+                        <h4>Lunch</h4>
+                        <p><a href="http://www.google.com/" title="View this image"><img src="img/demo-images/lunch-300x300.jpg" alt="Lunch" /></a></p>
+                        <p>Sandwiches</p>
+                    </div>
+                    <div>
+                        <h4>Dinner</h4>
+                        <p><a href="http://www.google.com/" title="View this image"><img src="img/demo-images/dinner-300x300.jpg" alt="Dinner" /></a></p>
+                        <p>A five course meal</p>
+                    </div>
+                </div>
+                <div class="thumbnails">
+                    <a href="img/demo-images/pancakes-300x300.jpg" title="View this image now"><img src="img/demo-images/pancakes-50x50.jpg" alt="Pancakes" /></a>
+                    <a href="img/demo-images/lunch-300x300.jpg" title="View this image now"><img src="img/demo-images/lunch-50x50.jpg" alt="Lunch" /></a>
+                    <a href="img/demo-images/dinner-300x300.jpg" title="View this image now"><img src="img/demo-images/dinner-50x50.jpg" alt="Dinner" /></a>
+                </div>
+            </div>
+            
+            <hr />
+            
+            <h2 id="e-3">Example 3</h2>
+            <p>This example shows how you can automatically set any slide you want (in this case the 3rd slide).</p>
+            
+            <div id="example-3">
+                <div class="links">
+                    <a href="#" title="View previous image" class="prev">Prev</a>
+                    <a href="#" title="View next image" class="next">Next</a>
+                </div>
+                <div class="slides">
+                    <img src="img/demo-images/pancakes-300x300.jpg" alt="" />
+                    <img src="img/demo-images/dinner-300x300.jpg" alt="" />
+                    <img src="img/demo-images/lunch-300x300.jpg" alt="" />
+                </div>
+                <div class="thumbnails">
+                    <a href="#" title="View this image"><img src="img/demo-images/pancakes-50x50.jpg" alt="" /></a>
+                    <a href="#" title="View this image"><img src="img/demo-images/dinner-50x50.jpg" alt="" /></a>
+                    <a href="#" title="View this image"><img src="img/demo-images/lunch-50x50.jpg" alt="" /></a>
+                </div>
+            </div>
+            
+            <hr />
+            
+            <h2 id="e-4">Example 4</h2>
+            <p>A complete example with thumbnails, images and styling.</p>
+            
+            <div id="example-4">
+                <div class="links">
+                    <a href="#" title="View previous image" class="prev">Prev</a>
+                    <a href="#" title="View next image" class="next">Next</a>
+                </div>
+                <div class="slides">
+                    <img src="img/demo-images/pancakes-300x300.jpg" alt="Pancakes" />
+                    <img src="img/demo-images/dinner-300x300.jpg" alt="Dinner" />
+                    <img src="img/demo-images/lunch-300x300.jpg" alt="Lunch" />
+                    <img src="img/demo-images/mountain-300x300.jpg" alt="Mountain" />
+                    <img src="img/demo-images/stream-300x300.jpg" alt="Stream" />
+                    <img src="img/demo-images/wave-300x300.jpg" alt="Wave" />
+                </div>
+                <div class="thumbnails">
+                    <a href="img/demo-images/pancakes-300x300.jpg" title="View this image now"><img src="img/demo-images/pancakes-50x50.jpg" alt="Pancakes" /></a>
+                    <a href="img/demo-images/dinner-300x300.jpg" title="View this image now"><img src="img/demo-images/dinner-50x50.jpg" alt="Dinner" /></a>
+                    <a href="img/demo-images/lunch-300x300.jpg" title="View this image now"><img src="img/demo-images/lunch-50x50.jpg" alt="Lunch" /></a>
+                    <a href="img/demo-images/mountain-300x300.jpg" title="View this image now"><img src="img/demo-images/mountain-50x50.jpg" alt="Pancakes" /></a>
+                    <a href="img/demo-images/stream-300x300.jpg" title="View this image now"><img src="img/demo-images/stream-50x50.jpg" alt="Lunch" /></a>
+                    <a href="img/demo-images/wave-300x300.jpg" title="View this image now"><img src="img/demo-images/wave-50x50.jpg" alt="Dinner" /></a>
+                </div>
+            </div>
+            
+            <hr />
+            
+        </div>
+    </body>
+</html>
